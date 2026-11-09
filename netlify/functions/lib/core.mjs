@@ -283,7 +283,7 @@ export async function handle(req) {
       const g = await sql.begin(async (tx) => {
         const [g] = await tx`
           insert into groups (name, icon, budget, max_players, roll_at, invite_code, owner_id)
-          values (${name}, ${validImage(body.icon) || '🎁'}, ${clean(body.budget, 60)}, ${parseMax(body.max_players ?? 20)},
+          values (${name}, ${validImage(body.icon) || 'i:gift'}, ${clean(body.budget, 60)}, ${parseMax(body.max_players ?? 20)},
                   ${parseRollAt(body.roll_at)}, ${code}, ${me.id})
           returning id`;
         await tx`insert into members (group_id, user_id) values (${g.id}, ${me.id})`;
@@ -333,7 +333,7 @@ export async function handle(req) {
 
     if (method === 'PUT' && !action) {
       const name = body.name !== undefined ? clean(body.name, 60) || g.name : g.name;
-      const icon = body.icon !== undefined ? validImage(body.icon) || '🎁' : g.icon;
+      const icon = body.icon !== undefined ? validImage(body.icon) || 'i:gift' : g.icon;
       const budget = body.budget !== undefined ? clean(body.budget, 60) : g.budget;
       const max = body.max_players !== undefined ? parseMax(body.max_players) : g.max_players;
       const rollAt = body.roll_at !== undefined ? parseRollAt(body.roll_at) : g.roll_at;
