@@ -1,0 +1,16 @@
+{
+  "name": "secret-santa",
+  "version": "1.0.0",
+  "description": "სეკრეტ სანტა",
+  "scripts": {
+    "dev": "node dev-server.mjs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "postgres": "^3.4.9"
+  },
+  "private": true,
+  "type": "module"
+}

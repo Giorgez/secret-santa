@@ -1,0 +1,18 @@
+/*
+  ქართული ფონტები
+  ----------------
+  ჩააგდეთ თქვენი ფონტის ფაილები public/fonts/ საქაღალდეში ამ სახელებით:
+    public/fonts/main.woff2      — ძირითადი ტექსტი
+    public/fonts/main-bold.woff2 — მუქი (bold) ტექსტი
+    public/fonts/display.woff2   — სათაურები / სახალისო ფონტი
+  (.ttf ან .otf ფაილებიც მუშაობს — უბრალოდ შეცვალეთ გაფართოება ქვემოთ.)
+  სანამ ფაილები არ არის, საიტი ავტომატურად იყენებს Noto Sans Georgian-ს.
+*/
+@font-face { font-family: "SantaMain";    src: url("/fonts/main.woff2") format("woff2");      font-weight: 400; font-display: swap; }
+@font-face { font-family: "SantaMain";    src: url("/fonts/main-bold.woff2") format("woff2"); font-weight: 700 900; font-display: swap; }
+@font-face { font-family: "SantaDisplay"; src: url("/fonts/display.woff2") format("woff2");   font-weight: 400 900; font-display: swap; }
+
+:root {
+  --font-main: "SantaMain", "Noto Sans Georgian", system-ui, sans-serif;
+  --font-display: "SantaDisplay", "SantaMain", "Noto Sans Georgian", system-ui, sans-serif;
+}
