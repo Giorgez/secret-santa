@@ -148,3 +148,10 @@ textarea { min-height: 96px; resize: vertical; }
 .me-btn[hidden] { display: none; }
 .toast { visibility: hidden; transform: translate(-50%, 250%); }
 .toast.show { visibility: visible; }
+
+/* BPG Caps — სათაურები, ღილაკები, მნიშვნელოვანი ტექსტი */
+.btn, .brand, .badge, .countdown b, .invite-code, .target .name, label, .back, .sep, .members b, .glist .grow > div:first-child {
+  font-family: var(--font-display); font-weight: 400; letter-spacing: .02em;
+}
+h1, h2, h3, .hero h1 { font-weight: 400; }
+.hint { font-family: var(--font-main); letter-spacing: 0; }

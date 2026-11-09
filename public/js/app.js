@@ -187,7 +187,7 @@ async function home() {
         <div class="card"><a href="/g/${g.id}" data-link>
           ${gicon(g)}
           <div class="grow">
-            <div style="font-weight:800">${esc(g.name)}</div>
+            <div style="">${esc(g.name)}</div>
             <div class="muted">👥 ${g.member_count}/${g.max_players} ${g.owner_id === me.id ? '· 👑 ადმინი' : ''}</div>
           </div>
           ${statusBadge(g)}
