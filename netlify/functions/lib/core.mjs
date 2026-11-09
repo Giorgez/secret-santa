@@ -197,6 +197,11 @@ export async function handle(req) {
   const sql = db();
   let m;
 
+  if (method === 'GET' && path === '/health') {
+    try { await sql`select 1 from users limit 1`; return { ok: true }; }
+    catch (e) { return { ok: false, error: String(e.message || e).slice(0, 200) }; }
+  }
+
   // --- auth ---
   if (method === 'POST' && path === '/register') {
     const username = normUser(body.username);
